@@ -1,20 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import {
+	Alert,
+	StyleSheet,
+	Text,
+	View,
+	TouchableWithoutFeedback,
+	TouchableNativeFeedback,
+} from "react-native";
+
+import { NativeRouter } from "react-router-native";
+
+import Main from "./src/components/Main";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+	return (
+		<NativeRouter>
+			<Main />
+		</NativeRouter>
+	);
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+/* ---Notas--- */
+/* El onPress no puedo estar en cualquier componente solo puede estar en los Touchable*/
+/* View es para crear vistas para el usuario (div) y se comporta con flex-box */
